@@ -1,6 +1,9 @@
 import { Provider, useMusicPlayer } from "./context"
-import { Audio } from "./audio"
 import { useState } from "react"
+
+import { Audio } from "./audio"
+import { Seekbar } from "./Seekbar"
+import {Controls} from "./Controls"
 
 function Player() {
 	const {currentMusic, getAudioData} = useMusicPlayer() 
@@ -27,6 +30,8 @@ function Player() {
 			"/>
 			<h2 className="font-bold text-2xl mt-5">{musicTitle}</h2>
 			<h3 className="text-[#555] text-sm" >{artist}</h3>
+			<Seekbar/>
+			<Controls/>
 		</div>
 	)
 }
