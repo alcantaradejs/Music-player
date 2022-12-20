@@ -3,19 +3,22 @@ export type MusicType = {
 	artist: string
 	coverURL: string
 	URL: string
+	credits?: string
 }
 
 export const MusicList : MusicType[] = [
 	{
-		title: "Musica de teste 1",
-		artist: "Batatatinha",
-		coverURL: "https://images.unsplash.com/photo-1468164016595-6108e4c60c8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-		URL: "#",
+		title: "Alone",
+		artist: "Heleen, BEAUZ",
+		coverURL: "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/266/850x850/alone-1670547652-ZJptqa923O.jpg",
+		URL: "/Alone-NCS-Release.mp3",
+		credits: " Song: Main Reaktor - Alone [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/alone Watch: http://youtu.be/3EJAc9SZwgc  ",
 	},
 	{
-		title: "Musica de teste 2",
-		artist: "Batatatinha",
-		coverURL: "https://images.unsplash.com/photo-1468164016595-6108e4c60c8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-		URL: "#",
+		title: "Mess",
+		artist: "SIIK, Alenn",
+		coverURL: "https://linkstorage.linkfire.com/medialinks/images/bdf69836-0e92-4048-b17b-79bf4b6cac36/artwork-440x440.jpg",
+		URL: "/Mess-NCS-Release.mp3",
+		credits: "Song: SIIK & Alenn - Mess [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Mess Watch: http://youtu.be/",
 	}
 ]
