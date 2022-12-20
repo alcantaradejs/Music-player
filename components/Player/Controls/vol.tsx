@@ -3,7 +3,7 @@ import { useRef } from "react"
 import { useMusicPlayer } from "../context"
 
 export function Vol() {
-	const {muted, mute, unmute, setVolume} = useMusicPlayer()
+	const {muted, mute, unmute, volume, setVolume} = useMusicPlayer()
 	const inputRef = useRef()
 
 	function muteToggle () {
@@ -29,6 +29,7 @@ export function Vol() {
 					ref={inputRef}
 					type="range" 
 					min={0} max={100}
+					value={volume}
 					onChange={handleChange}
 				/>
 			</div>
