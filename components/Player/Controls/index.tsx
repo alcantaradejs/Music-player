@@ -1,7 +1,9 @@
 import { SkipBack, SkipForward } from "phosphor-react"
+
 import { useMusicPlayer } from "../context"
 import { PlayPause } from "./PlayPouse"
 import { RepeatButton } from "./repeat"
+import { Vol } from "./vol"
 
 export function Controls() {
 	const { nextMusic, previousMusic } = useMusicPlayer()
@@ -18,9 +20,7 @@ export function Controls() {
 					<SkipForward weight="fill" size={30}/>
 				</button>
 			</div>
-			<button>
-				vol
-			</button>
+			<Vol/>
 		</div>
 	)
 }

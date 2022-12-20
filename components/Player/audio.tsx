@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { useMusicPlayer } from "./context"
 
 export function Audio() {
-	const { currentMusic, getAudioData, isPlaying, audioEnded, play, pause, setDuration, setCurrentTime, updateTime } = useMusicPlayer()
+	const { currentMusic, getAudioData, isPlaying, audioEnded, play, pause, setDuration, setCurrentTime, updateTime, muted, volume } = useMusicPlayer()
 	const [audioURL, setAudioURL] = useState("")
 	const audioRef = useRef()
 
@@ -20,7 +20,18 @@ export function Audio() {
 
 	useEffect(() => {
 		audioRef.current.currentTime = updateTime
-	}, [updateTime]) // debugar audio event
+	}, [updateTime])
+
+	useEffect(() => {
+		const audio = audioRef.current
+		if (muted) audio.volume = 0
+		else audio.volume = volume
+	}, [muted])
+
+	useEffect(() => {
+		const audio = audioRef.current
+		if (!muted) audio.volume = volume
+	},[volume])
 
 	function onDurationChange() {
 		setDuration(audioRef.current.duration)

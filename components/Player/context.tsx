@@ -15,6 +15,8 @@ export function Provider({ children }:providerPropsType) {
 	const [updateTime, setUpdateTime] = useState(0)
 	const [ duration, setDuration ] = useState(0)
 	const [ repeat, setRepeat ] = useState(false)
+	const [ muted, setMuted ] = useState(false)
+	const [ volume, setVolume ] = useState(0.5)
 
 	function nextMusic() {
 		if (currentMusic <= MusicList.length - 2) setCurrentMusic( currentMusic + 1 )
@@ -44,6 +46,14 @@ export function Provider({ children }:providerPropsType) {
 		setIsPlayng(false)
 	}
 
+	function mute() {
+		setMuted(true)
+	}
+
+	function unmute() {
+		setMuted(false)
+	}
+
 	return (
 		<PlayerContext.Provider 
 			value={{ 
@@ -53,6 +63,8 @@ export function Provider({ children }:providerPropsType) {
 				duration, setDuration, currentTime, setCurrentTime,
 				updateTime, setUpdateTime,
 				repeat, setRepeat,
+				muted, mute, unmute,
+				volume, setVolume,
 			}}
 		>
 			{ children }
