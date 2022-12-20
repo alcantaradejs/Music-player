@@ -1,5 +1,5 @@
 import { Provider, useMusicPlayer } from "./context"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { Audio } from "./audio"
 import { Seekbar } from "./Seekbar"
@@ -11,7 +11,7 @@ function Player() {
 	const [ musicTitle, setMusicTitle ] = useState("...")
 	const [ artist, setArtist ] = useState("...")
 
-	useState(() => {
+	useEffect(() => {
 		const {title, artist, coverURL} = getAudioData(currentMusic)
 		setCover(coverURL)
 		setMusicTitle(title)
