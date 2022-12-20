@@ -33,7 +33,7 @@ export function Audio() {
 	return (
 		<>
 			<audio 
-				autoPlay 
+				autoPlay
 				src={audioURL} 
 				ref={audioRef}
 				onTimeUpdate={onTimeUpdate}

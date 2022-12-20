@@ -14,6 +14,7 @@ export function Provider({ children }:providerPropsType) {
 	const [currentTime, setCurrentTime] = useState(0)
 	const [updateTime, setUpdateTime] = useState(0)
 	const [ duration, setDuration ] = useState(0)
+	const [ repeat, setRepeat ] = useState(false)
 
 	function nextMusic() {
 		if (currentMusic <= MusicList.length - 2) setCurrentMusic( currentMusic + 1 )
@@ -28,7 +29,11 @@ export function Provider({ children }:providerPropsType) {
 	}
 	
 	function audioEnded() {
-		nextMusic()
+		if (repeat) {
+			setUpdateTime(0)
+			play()
+		}
+		else nextMusic()
 	}
 
 	function play() {
@@ -47,6 +52,7 @@ export function Provider({ children }:providerPropsType) {
 				isPlaying, audioEnded, play, pause,
 				duration, setDuration, currentTime, setCurrentTime,
 				updateTime, setUpdateTime,
+				repeat, setRepeat,
 			}}
 		>
 			{ children }
