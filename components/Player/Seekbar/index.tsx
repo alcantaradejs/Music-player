@@ -1,11 +1,29 @@
+import { useRef } from "react"
+import { TimeFormatter } from "../../../utils/timeFormatter"
+import { useMusicPlayer } from "../context"
+
 export function Seekbar() {
+	const {duration, currentTime, setUpdateTime} = useMusicPlayer()
+	const inputRef = useRef()
+
+	function handleChange() {
+		setUpdateTime(inputRef.current.value)
+	}
+
 	return (
 		<div className="mt-5">
 			<div className="w-full flex flex-row justify-between">
-				<span className="text-sm">00:00</span>
-				<span className="text-sm">00:00</span>
+				<span className="text-sm">{TimeFormatter(currentTime)}</span>
+				<span className="text-sm">{TimeFormatter(duration)}</span>
 			</div>
-			<input type="range" min={0} className="w-full"/>
+			<input
+				ref={inputRef}
+				type="range" 
+				min={0} max={duration} 
+				value={currentTime} 
+				className="w-full"
+				onChange={handleChange}
+			/>
 		</div>
 	)
 }

@@ -12,6 +12,7 @@ export function Provider({ children }:providerPropsType) {
 	const [currentMusic, setCurrentMusic] = useState(0)
 	const [isPlaying, setIsPlayng] = useState(false)
 	const [currentTime, setCurrentTime] = useState(0)
+	const [updateTime, setUpdateTime] = useState(0)
 	const [ duration, setDuration ] = useState(0)
 
 	function nextMusic() {
@@ -45,6 +46,7 @@ export function Provider({ children }:providerPropsType) {
 				currentMusic, nextMusic, previousMusic,
 				isPlaying, audioEnded, play, pause,
 				duration, setDuration, currentTime, setCurrentTime,
+				updateTime, setUpdateTime,
 			}}
 		>
 			{ children }
