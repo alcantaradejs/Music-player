@@ -17,11 +17,11 @@ export function Seekbar() {
 				<span className="text-sm">{TimeFormatter(duration)}</span>
 			</div>
 			<input
+				className="w-full"
 				ref={inputRef}
 				type="range" 
 				min={0} max={duration} 
 				value={currentTime} 
-				className="w-full"
 				onChange={handleChange}
 			/>
 		</div>

@@ -17,17 +17,21 @@ export function Vol() {
 	}
 
 	return (
-		<div className="flex flex-row gap-2 w-8 group">
+		<div className="flex flex-row gap-2 w-8 group items-center">
 			<button onClick={muteToggle}>
 				{!muted ? <SpeakerHigh size={30} weight="fill"/> : <SpeakerSlash size={30} weight="fill"/>}
 			</button>
-			<input
-                ref={inputRef}
-				className="w-2 opacity-0 transition-all group-hover:w-16 group-hover:opacity-100"
-				type="range" 
-				min={0} max={100}
-                onChange={handleChange}
-			/>
+			<div 
+				className="w-2 opacity-0 transition-all lg:group-hover:w-16 lg:group-hover:opacity-100"
+			>
+				<input
+					className="w-16"
+					ref={inputRef}
+					type="range" 
+					min={0} max={100}
+					onChange={handleChange}
+				/>
+			</div>
 		</div>
 	)
 }
