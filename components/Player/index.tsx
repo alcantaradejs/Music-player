@@ -19,7 +19,7 @@ function Player() {
 	}, [currentMusic])
 
 	return (
-		<div className="max-w-[456px] mx-10 box-border text-text">
+		<div className="max-w-[456px] min-w-[320px]: mx-10 box-border text-text">
 			<Audio/>
 			<img 
 				src={cover} 
